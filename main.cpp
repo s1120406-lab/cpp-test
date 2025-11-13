@@ -1,44 +1,18 @@
-/******************************************************************************
+CREATE TABLE DEPARTMENT (
+    DEPTNO NUMBER(2) PRIMARY KEY,
+    DNAME VARCHAR2(14),
+    LOC VARCHAR2(13)
+);
 
-Welcome to GDB Online.
-  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
-  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
-  Code, Compile, Run and Debug online from anywhere in world.
+-- 插入資料
+INSERT INTO DEPARTMENT VALUES (10, 'ACCOUNTING', 'NEW YORK');
+INSERT INTO DEPARTMENT VALUES (20, 'RESEARCH', 'DALLAS');
+INSERT INTO DEPARTMENT VALUES (30, 'SALES', 'CHICAGO');
+INSERT INTO DEPARTMENT VALUES (40, 'OPERATIONS', 'BOSTON');
 
-*******************************************************************************/
-#include <iostream>
-using namespace std;
+COMMIT;
 
-int main() {
-    int stack[5];
-    int top = -1;
-
-    top++;
-    stack[top] = 10;
-    top++;
-    stack[top] = 20;
-    top++;
-    stack[top] = 30;
-
-    cout << "目前堆疊內容: " << endl;
-    for (int i = 0; i <= top; i++) {
-        cout << stack[i] << " ";
-    }
-
-    cout << endl;
-
-    if (top >= 0) {
-        cout << "彈出元素: " << stack[top] << endl;
-        top--;
-    } else {
-        cout << "堆疊是空的，不能彈出!" << endl;
-    }
-
-    cout << "彈出後堆疊內容: " << endl;
-    for (int i = 0; i <= top; i++) {
-        cout << stack[i] << " ";
-    }
-    cout << endl;
-
-    return 0;
-}
+-- 查詢資料
+SELECT DEPTNO, DNAME, LOC
+FROM DEPARTMENT
+ORDER BY DEPTNO;
