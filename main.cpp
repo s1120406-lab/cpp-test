@@ -1,18 +1,25 @@
-CREATE TABLE DEPARTMENT (
-    DEPTNO NUMBER(2) PRIMARY KEY,
-    DNAME VARCHAR2(14),
-    LOC VARCHAR2(13)
-);
+/******************************************************************************
 
--- 插入資料
-INSERT INTO DEPARTMENT VALUES (10, 'ACCOUNTING', 'NEW YORK');
-INSERT INTO DEPARTMENT VALUES (20, 'RESEARCH', 'DALLAS');
-INSERT INTO DEPARTMENT VALUES (30, 'SALES', 'CHICAGO');
-INSERT INTO DEPARTMENT VALUES (40, 'OPERATIONS', 'BOSTON');
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
 
-COMMIT;
+*******************************************************************************/
+#include <iostream>
+using namespace std;
 
--- 查詢資料
-SELECT DEPTNO, DNAME, LOC
-FROM DEPARTMENT
-ORDER BY DEPTNO;
+int accumulate(int n);
+
+int main() {
+    int number = 100;
+    cout << "從1加到" << number << "總合為: " << accumulate(number);
+    return 0;
+}
+
+int accumulate(int n) {
+    if (n == 1) {
+        return 1;
+    }
+    return n + accumulate(n - 1);
+}
